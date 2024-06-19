@@ -17,6 +17,16 @@ public class Cliente {
         this.telefone = telefone;
     }
 
+    public Cliente(String nome, String email, String endereco, String CPF, String telefone) {
+        this.nome = nome;
+        this.email = email;
+        this.endereco = endereco;
+        this.CPF = CPF;
+        this.telefone = telefone;
+    }
+    
+    
+
     public int getClienteId() {
         return clienteId;
     }
