@@ -18,7 +18,7 @@ public class ClienteService {
     
     public boolean inserir(Cliente cliente){
         
-        if (cliente.getNome() == "" || cliente.getCPF() == "")
+        if (cliente.getNome() == "" || cliente.getCPF() == "" || cliente.getTelefone() == "")
             return false;
         
         clienteDao.inserir(cliente);
@@ -26,7 +26,7 @@ public class ClienteService {
     }
     
     public boolean excluir(Cliente cliente){
-        if (cliente.getClienteId() == 0)
+        if (cliente.getClienteId() == -1)
             return false;
         
         clienteDao.excluir(cliente);
@@ -40,4 +40,9 @@ public class ClienteService {
         clienteDao.editar(cliente);
         return true;
     }
+
+    public ResultSet retornarClienteVenda(int vendaId){  
+        return clienteDao.retornarClienteVenda(vendaId);
+    } 
+    
 }

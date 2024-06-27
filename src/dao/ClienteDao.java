@@ -49,7 +49,7 @@ public class ClienteDao {
     
     public void excluir(Cliente cliente){
         try {
-            String SQL = "DELETE FROM cliente WHERE id = ?";
+            String SQL = "DELETE FROM cliente WHERE cliente_id = ?";
             
             ps = conexao.getConn().prepareStatement(SQL);
             
@@ -67,7 +67,7 @@ public class ClienteDao {
         try {
             String SQL = "UPDATE cliente SET " +
                         "nome= ?, email= ?, endereco= ?, cpf= ?, telefone= ?" + 
-                        "WHERE id=?";
+                        "WHERE cliente_id=?";
             
             ps = conexao.getConn().prepareStatement(SQL);
             
@@ -76,6 +76,7 @@ public class ClienteDao {
             ps.setString(3, cliente.getEndereco());
             ps.setString(4, cliente.getCPF());
             ps.setString(5, cliente.getTelefone());
+            ps.setInt(6, cliente.getClienteId());
                         
             ps.executeUpdate();
                         
@@ -85,4 +86,18 @@ public class ClienteDao {
         }
     }
     
+    public ResultSet retornarClienteVenda(int vendaId) {
+        try {
+            String sql = "SELECT c.* FROM cliente c INNER JOIN venda v ON c.cliente_id = v.cliente_id WHERE v.venda_id = ?";
+            
+            PreparedStatement ps = conexao.getConn().prepareStatement(sql);
+            ps.setInt(1, vendaId);
+            
+            return ps.executeQuery();  // Retorna o ResultSet com os dados do cliente
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        return null;
+    } 
 }

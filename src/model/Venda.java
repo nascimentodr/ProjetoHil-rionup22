@@ -7,21 +7,26 @@ public class Venda {
     private Cliente cliente;
     private Date data;
     private List<VendaProduto> itensVendidos;
+    private double valorTotal;
 
-    public Venda(int vendaId, Cliente cliente, Date data, List<VendaProduto> itensVendidos) {
+    public Venda(int vendaId, Cliente cliente, Date data, List<VendaProduto> itensVendidos, double valorTotal) {
         this.vendaId = vendaId;
         this.cliente = cliente;
         this.data = data;
         this.itensVendidos = itensVendidos;
+        this.valorTotal = valorTotal;
     }
     
     public double calcularValorTotal() {
     double valorTotal = 0.0;
-    for (VendaProduto item : itensVendidos) {
-        valorTotal += item.CalcularValorTotalItem();
+    
+    if (itensVendidos != null){
+        for (VendaProduto item : itensVendidos) {
+            valorTotal += item.getValorTotalItem();
+        }
     }
         return valorTotal;
-    }
+}
 
     public int getVendaId() {
         return vendaId;
@@ -54,5 +59,13 @@ public class Venda {
     public void setItensVendidos(List<VendaProduto> itensVendidos) {
         this.itensVendidos = itensVendidos;
     }
-       
+
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
 }

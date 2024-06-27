@@ -5,32 +5,38 @@ public class VendaProduto {
     private Produto produto;
     private int quantidade;
     private double valorUnitario;
+    private double valorTotalItem;
 
-    public VendaProduto(Venda venda, Produto produto, int quantidade, double valorUnitario) {
+    public VendaProduto(Venda venda, Produto produto, int quantidade, double valorUnitario, double valorTotalItem) {
         this.venda = venda;
         this.produto = produto;
         this.quantidade = quantidade;
         this.valorUnitario = valorUnitario;
+        this.valorTotalItem = valorTotalItem;
     }
     
-    public double CalcularValorTotalItem() {
-        return quantidade * valorUnitario;
-    }
+    //public double CalcularValorTotalItem(){
+    //    return quantidade * valorUnitario;
+    //}
     
-    public Venda getVendaId() {
+    public void CalcularValorTotalItem() {
+        this.valorTotalItem = quantidade * valorUnitario;
+    }
+
+    public Venda getVenda() {
         return venda;
     }
 
-    public void setVendaId(Venda vendaId) {
-        this.venda = vendaId;
+    public void setVenda(Venda venda) {
+        this.venda = venda;
     }
 
-    public Produto getProdutoId() {
+    public Produto getProduto() {
         return produto;
     }
 
-    public void setProdutoId(Produto produtoId) {
-        this.produto = produtoId;
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
 
     public int getQuantidade() {
@@ -49,6 +55,12 @@ public class VendaProduto {
         this.valorUnitario = valorUnitario;
     }
 
+    public double getValorTotalItem() {
+        return valorTotalItem;
+    }
 
-    
+    public void setValorTotalItem(double valorTotalItem) {
+        this.valorTotalItem = valorTotalItem;
+    }
+ 
 }
