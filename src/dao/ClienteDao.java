@@ -66,8 +66,8 @@ public class ClienteDao {
     public void editar(Cliente cliente){
         try {
             String SQL = "UPDATE cliente SET " +
-                        "nome= ?, email= ?, endereco= ?, cpf= ?, telefone= ?" + 
-                        "WHERE cliente_id=?";
+                        "nome= ?, email= ?, endereco= ?, cpf= ?, telefone= ?" +   // A FALTA DE ESPAÇO 
+                        "WHERE cliente_id=?";                                     //NÃO DEU ERRO DE SINTAXE
             
             ps = conexao.getConn().prepareStatement(SQL);
             

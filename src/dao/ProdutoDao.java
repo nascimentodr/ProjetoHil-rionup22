@@ -47,7 +47,7 @@ public class ProdutoDao {
     
     public void excluir(Produto produto){
         try {
-            String SQL = "DELETE FROM produto WHERE id = ?";
+            String SQL = "DELETE FROM produto WHERE produto_id = ?";
             
             ps = conexao.getConn().prepareStatement(SQL);
             
@@ -64,13 +64,14 @@ public class ProdutoDao {
     public void editar(Produto produto){
         try {
             String SQL = "UPDATE produto SET " +
-                        "nome= ?, quantidade_de_estoque= ?" + 
-                        "WHERE id=?";
+                        "nome= ?, quantidade_de_estoque= ? " + 
+                        "WHERE produto_id=?";
             
             ps = conexao.getConn().prepareStatement(SQL);
             
             ps.setString(1, produto.getNome());
-            ps.setInt(2, produto.getQuantidadeEstoque()); 
+            ps.setInt(2, produto.getQuantidadeEstoque());
+            ps.setInt(3, produto.getProdutoId());
 
             ps.executeUpdate();
                         

@@ -5,6 +5,15 @@ public class Produto{
     private String nome;
     private int quantidadeEstoque;
 
+    
+    public Produto(String nome, int quantidadeEstoque) {
+        this.nome = nome;
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
+    
+    
+    
+
     public Produto(int produtoId, String nome, int quantidadeEstoque) {
         this.produtoId = produtoId;
         this.nome = nome;

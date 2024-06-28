@@ -12,24 +12,7 @@ public class TesteFinal {
     
     public static void main(String[] args) throws SQLException {
         
-        int opcao, novaOpcao, id, idVenda;
-        String nome, email, endereco, cpf, telefone;
-        
-    ClienteService clienteService = new ClienteService();
-    
-    Cliente c = new Cliente("teste", "teste", "teste", "teste", "teste");
-    
-    id = 0;
-    
-        
-        /* Create        
-        Aluno a1 = new Aluno();
-        a1.setNome("Marcos");
-        a1.setMatricula("123");
-        
-        //alunoService.inserir(a1);
-        */
-        
+        int opcao;
         
         Scanner teclado = new Scanner(System.in);
  
@@ -47,53 +30,33 @@ public class TesteFinal {
         
         switch(opcao){
             
-            case 1:
+            case 1: // PRONTO
                 
                 TesteCliente tc = new TesteCliente();
                 tc.opcaoCliente();
                 break;
                 
             case 2:
-                System.out.print("Operações do produto");
+                TesteProduto tp = new TesteProduto();
+                tp.opcaoProduto();
                 break;
                 
 
             case 3:
-                System.out.print("Operações de venda");
+                System.out.println("Operações de venda");
                 break;
             
             case 4:
-                System.out.print("Operações de pagamento ");
+                System.out.println("Operações de pagamento ");
                 break;
             
             default:
                 System.out.println("Opção incorreta.");
-                /*
-                System.out.println("1: Listar clientes");
-                System.out.println("2: Adicionar um cliente");
-                System.out.println("3: Editar um cliente");
-                System.out.println("4: Deletar um cliente");
-                System.out.println("5: Recuperar cliente através da venda");
-                System.out.print("Opção: ");
-                
-                novaOpcao = teclado.nextInt();
-                */
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                // ACABAM AQUI OS AS OPÇÕES RELACIONADAS AOS CLIENTES
-
  
             
                        
         }
-}
+    }
 
 }
 

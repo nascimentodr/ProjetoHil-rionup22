@@ -16,15 +16,16 @@ public class TesteCliente {
     
     public void opcaoCliente() throws SQLException{
             
-        int opcao, novaOpcao, id, idVenda;
+        int novaOpcao, id, idVenda;
         String nome, email, endereco, cpf, telefone;
     
         
         
         Scanner teclado = new Scanner(System.in);
-        ClienteService clienteService = new ClienteService();
+        ClienteService clienteService = new ClienteService();  //  *** NÃO ESQUECER
+                                                               //DE INSTANCIAR NAS OUTRAS
 
-        Cliente c = new Cliente("teste", "teste", "teste", "teste", "teste");
+        Cliente c = new Cliente("", "", "", "", ""); // se for deletar não precisará instânciar
         
         
             System.out.println("1: Listar clientes");
@@ -104,12 +105,11 @@ public class TesteCliente {
                         c = new Cliente(nome, email, endereco, cpf, telefone);
                         c.setClienteId(id);
               
-                       
                         clienteService.editar(c);
                         
-                        
-                        
                         break;
+                        
+                        
                     case 4:
                         System.out.println("Vai deletar cliente");
                         
@@ -148,9 +148,6 @@ public class TesteCliente {
                             System.out.println("---------");
 
                         }
-                        
-                        
-                        
                         
                         
                         break;
