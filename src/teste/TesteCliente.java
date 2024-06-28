@@ -8,9 +8,6 @@ import model.Cliente;
 import model.Venda;
 import service.ClienteService;
 
-
-import java.util.Scanner;
-
 public class TesteCliente {
     
     
@@ -62,7 +59,7 @@ public class TesteCliente {
                         
                         break;
                      
-                    case 2:   // concluído
+                    case 2:   // LEMBRAR DE TROCAR POR nextLine
                         System.out.println("Vai inserir");
                         
                         System.out.println("OK! Vamos precisar dos dados do cliente.");

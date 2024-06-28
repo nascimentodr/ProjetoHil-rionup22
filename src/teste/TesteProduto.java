@@ -91,6 +91,9 @@ public class TesteProduto {
                     
                     produtoService.excluir(p);
                     break;
+                 
+                default:
+                    System.out.println("OPÇÃO INVÁLIDA");  // TESTAR. ESQUECI DE INSERIR O DEFAULT
                     
             }
             

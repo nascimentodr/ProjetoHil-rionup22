@@ -43,7 +43,8 @@ public class TesteFinal {
                 
 
             case 3:
-                System.out.println("Operações de venda");
+                TesteVenda tv = new TesteVenda();
+                tv.opcaoVenda();
                 break;
             
             case 4:
